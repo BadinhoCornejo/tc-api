@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mssql:
+    image: mcr.microsoft.com/azure-sql-edge
+    environment:
+      - MSSQL_SA_PASSWORD=BorooX23!
+      - ACCEPT_EULA=1
+    ports:
+      - '1433:1433'
+    hostname: mssql
+    volumes:
+      - 'mssql-azuresql-edge-data:/var/opt/mssql'
+
+volumes:
+  mssql-azuresql-edge-data:
