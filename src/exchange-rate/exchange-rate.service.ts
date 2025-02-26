@@ -65,8 +65,8 @@ export async function getExchangeRateUSDToPENSUNAT(
     const USD_PEN_URL =
       'https://e-consulta.sunat.gob.pe/cl-at-ittipcam/tcS01Alias/listarTipoCambio';
     const _from = parse(from, 'yyyy-dd-MM', new Date());
-    const year = new Date(_from).getFullYear();
-    const month = new Date(_from).getMonth();
+    const year = _from.getFullYear();
+    const month = _from.getMonth();
     const { data } = await axios.post(USD_PEN_URL, {
       anio: year,
       mes: month,
